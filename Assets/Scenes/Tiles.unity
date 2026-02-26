@@ -1408,7 +1408,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   attackSpawn: {fileID: 214079639}
-  attackPrefab: {fileID: 0}
+  attackPrefab: {fileID: 7147160316325498557, guid: f38f8fdfcf8e14348a4fd74a52611098, type: 3}
 --- !u!1 &1553470262
 GameObject:
   m_ObjectHideFlags: 0
