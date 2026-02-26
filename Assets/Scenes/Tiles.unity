@@ -1137,6 +1137,7 @@ GameObject:
   - component: {fileID: 1026253579}
   - component: {fileID: 1026253581}
   - component: {fileID: 1026253582}
+  - component: {fileID: 1026253584}
   - component: {fileID: 1026253583}
   m_Layer: 0
   m_Name: chara2_1
@@ -1409,6 +1410,33 @@ MonoBehaviour:
     m_Flags: 0
   attackSpawn: {fileID: 214079639}
   attackPrefab: {fileID: 7147160316325498557, guid: f38f8fdfcf8e14348a4fd74a52611098, type: 3}
+--- !u!114 &1026253584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026253576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecc59106af59944a93df3057daf1c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  OnAnimationComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1026253584}
+        m_TargetAssemblyTypeName: SpriteAnimator, Assembly-CSharp
+        m_MethodName: InitializeAnimation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: af8a82ca9af321749a94ae330f11da81, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AnimationData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1553470262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,8 +1550,9 @@ GameObject:
   - component: {fileID: 1594065793}
   - component: {fileID: 1594065795}
   - component: {fileID: 1594065796}
+  - component: {fileID: 1594065797}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1586,6 +1615,43 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &1594065797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594065792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a2a7428801a444fb76930c1f2d895e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogBox
+  dialogText: {fileID: 423159837}
+  speakerName: {fileID: 576403689}
+  portait: {fileID: 290698304}
+  dialogDatabase: {fileID: 11400000, guid: 324f47e4c81718f4392fd7938a8384d0, type: 2}
+  typingSpeed: 0.02
+  continueDialog:
+    m_Name: Continue Dialog
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3ee9aeb1-8dc8-489c-a1d8-a7f178f01abd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 0039a076-755b-4d2b-b060-f2e66b3247f8
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Continue Dialog
+      m_Flags: 0
+    m_Flags: 0
+  OnMessageComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1703411340
 GameObject:
   m_ObjectHideFlags: 0
