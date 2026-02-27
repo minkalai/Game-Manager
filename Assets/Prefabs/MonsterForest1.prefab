@@ -3283,8 +3283,8 @@ MonoBehaviour:
   - {fileID: 9152430056102845714}
   - {fileID: 3435048991440113905}
   - {fileID: 6061900205757165043}
-  spawnPool:
-  - {fileID: 11400000, guid: a97ee5b30998b3b4d8c0970935e67930, type: 2}
+  activeEnemies: []
+  enemyDatabase: {fileID: 11400000, guid: 2b601dc2217dec64a83fe14a99b66e78, type: 2}
 --- !u!1 &8074643541257105015
 GameObject:
   m_ObjectHideFlags: 0

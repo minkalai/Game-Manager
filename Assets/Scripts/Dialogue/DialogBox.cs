@@ -15,6 +15,7 @@ public class DialogBox : MonoBehaviour
     public TextMeshProUGUI dialogText;
     public TextMeshProUGUI speakerName;
     public Image portait;
+    public GameObject uiElement;
 
     [Header("Data")]
     public DialogDatabaseSO dialogDatabase;
@@ -26,6 +27,7 @@ public class DialogBox : MonoBehaviour
     private bool inputRecieved = false;
     
     public UnityEvent OnMessageComplete;
+    public event Action OnMessageComplete2;
     private void Awake()
     {
         Instance = this;
@@ -46,6 +48,7 @@ public class DialogBox : MonoBehaviour
 
     public void DisplayDialog(int index)
     {
+        uiElement.SetActive(true);
         DialogSO dialog = dialogDictionary[index];
         speakerName.text = dialog.speakerName;
         portait.sprite = dialog.portrait;
@@ -69,6 +72,7 @@ public class DialogBox : MonoBehaviour
         inputRecieved = false;
         yield return new WaitUntil(() => inputRecieved);
         OnMessageComplete?.Invoke();
+        OnMessageComplete2?.Invoke();
         yield return null;
     }
 }

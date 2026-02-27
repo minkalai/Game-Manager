@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,9 +45,17 @@ public class MapNavigation : MonoBehaviour
 
 		Vector3 newPosition = g.GetCellCenterWorld(mapDictionary[mapID].entryPoints[entryPointID].cell);
 		player.position = newPosition;
+		StartCoroutine(InitMap(mapID));
 		OnNavigate?.Invoke();
 	}
+
+	private IEnumerator InitMap(int mapID)
+	{
+		yield return new WaitForEndOfFrame();
+		GameStateManager.Instance.InitializeMap(mapID);
+	}
 }
+
 
 public class MapData
 {

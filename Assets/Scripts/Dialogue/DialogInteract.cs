@@ -12,11 +12,20 @@ public class DialogInteract : MonoBehaviour
     public void InitiateDialog()
     {
         DialogBox.Instance.DisplayDialog(dialogIndex);
+        DialogBox.Instance.OnMessageComplete2 += UpdateDialogIndex;
     }
 
     public void UpdateDialogIndex()
     {
         currentIndex++;
-        dialogIndex = dialogIndexes[currentIndex];
+        if (currentIndex < dialogIndexes.Count)
+        {
+            dialogIndex = dialogIndexes[currentIndex];
+            DialogBox.Instance.DisplayDialog(dialogIndex);
+        }
+        else
+        {
+            DialogBox.Instance.uiElement.SetActive(false);
+        }
     }
 }
