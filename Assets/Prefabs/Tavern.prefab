@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogInteract
   dialogIndex: 0
-  dialogIndexes: 
+  dialogIndexes: 0000000001000000
 --- !u!1 &4673365739085908497
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8590fd51a1b5fc54c8892ac0792eeb4e, type: 3}
   m_Name: DialogDatabaseSO
   m_EditorClassIdentifier: Assembly-CSharp::DialogDatabaseSO
-  dialogLines: []
+  dialogLines:
+  - id: 0
+    config: {fileID: 11400000, guid: 468919d2d6378c947ad3e79da9d7b9b9, type: 2}
+  - id: 1
+    config: {fileID: 11400000, guid: 81315ac7ac325254aa48a07b5974accc, type: 2}
