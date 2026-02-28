@@ -3,20 +3,56 @@ using System.IO;
 
 public class JSonSaving : MonoBehaviour
 {
-    //public string filePath;
-    public string saveName;
-    [ContextMenu("JSON Save")]
+	public static JSonSaving Instance;
+	public string saveName = "SaveFile";
 
-    public void SaveData()
-    {
-        //string file = filePath + saveName + ".json";
-       // string filePathFixed = Path.Combine(Application.persistentDataPath, saveName + ".json"); <-- use this line instead for your build
-        string filePathFixed = Path.Combine("Assets/Resources", saveName + ".json");
-        string json = JsonUtility.ToJson(GameStateManager.Instance.gameState, true);
+	private string FullPath => Path.Combine(Application.persistentDataPath, saveName + ".json");
 
-        File.WriteAllText(filePathFixed, json);
-        
-    }
+	private void Awake()
+	{
+		Instance = this;
+	}
 
-   
+	public void SaveData()
+	{
+		GameStateManager.Instance.SaveGameState();
+
+		string json = JsonUtility.ToJson(GameStateManager.Instance.gameState, true);
+		File.WriteAllText(FullPath, json);
+
+		Debug.Log("Game Saved To: " + FullPath);
+	}
+
+	public void LoadData()
+	{
+		if (!File.Exists(FullPath))
+		{
+			Debug.Log("No Save File Found.");
+			return;
+		}
+
+		string json = File.ReadAllText(FullPath);
+		GameState loadedData = JsonUtility.FromJson<GameState>(json);
+
+		GameStateManager.Instance.gameState = loadedData;
+
+		foreach (MapState mapState in GameStateManager.Instance.gameState.mapStates)
+		{
+			mapState.InitializeDictionary();
+		}
+
+		GameStateManager.Instance.InitializeMap(GameStateManager.Instance.currentMapID);
+
+		Debug.Log("Game Loaded.");
+	}
+
+	public bool SaveFileExists()
+	{
+		return File.Exists(FullPath);
+	}
+
+	private void OnApplicationQuit()
+	{
+		SaveData();
+	}
 }
