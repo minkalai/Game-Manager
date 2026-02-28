@@ -5371,5 +5371,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036854e5108f77c44b1be8574d37347b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogInteract
-  dialogIndex: 0
-  dialogIndexes: 
+  dialogIndex: 4
+  dialogIndexes: 04000000050000000600000007000000
