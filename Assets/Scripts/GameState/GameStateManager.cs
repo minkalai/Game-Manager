@@ -2,10 +2,14 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static GameStateManager Instance;
+    [SerializeField] Button Resume, SaveExit;
+    [SerializeField] GameObject pausePanel;
+
+	public static GameStateManager Instance;
     //public List<MapState> mapStates = new List<MapState>();
     public GameState gameState;
     public Transform mapParent;

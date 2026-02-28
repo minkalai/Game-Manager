@@ -46,9 +46,11 @@ public class RangeEmeny : Enemy
 		projectile.InstantiateProjectile(-projectileVelocity);
 	}
 
+
 	public override void Die()
 	{
-		throw new System.NotImplementedException();
+		//throw new System.NotImplementedException();
+		this.gameObject.SetActive(false);
 	}
 
 
