@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7633439925196545796}
   m_Layer: 0
   m_Name: chara8_49
-  m_TagString: Untagged
+  m_TagString: Tavern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogInteract
   dialogIndex: 0
-  dialogIndexes: 0000000001000000
+  dialogIndexes: 000000000100000002000000
 --- !u!1 &4673365739085908497
 GameObject:
   m_ObjectHideFlags: 0

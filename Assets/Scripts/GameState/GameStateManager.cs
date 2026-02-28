@@ -10,7 +10,7 @@ public class GameStateManager : MonoBehaviour
     public GameState gameState;
     public Transform mapParent;
     private EnemySpawner spawner;
-    private int currentMapID;
+    public int currentMapID;
     private MapState currentMapState;
 
     private void Awake()
@@ -28,6 +28,11 @@ public class GameStateManager : MonoBehaviour
     }
     public void InitializeMap(int mapID_)
     {
+        currentMapID = mapID_;
+        if (spawner != null)
+        {
+            spawner.ClearEnemies();
+        }
 
         foreach (MapState mapState in gameState.mapStates)
         {

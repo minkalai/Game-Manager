@@ -38,6 +38,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (e != null)
             {
+                Debug.Log("Enemies health reset");
                 e.ResetHealth();
             }
         }

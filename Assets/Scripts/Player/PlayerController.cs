@@ -51,7 +51,9 @@ public class PlayerController : MonoBehaviour
 		if (collision.tag == "Tavern")
 		{
 			//reset enemy health
-			reset.ResetAllEnemyHealth();
+			//reset.ResetAllEnemyHealth();
+			GameStateManager.Instance.ResetEnemies();
+			GameStateManager.Instance.InitializeMap(GameStateManager.Instance.currentMapID);
 		}
 	}
 }
