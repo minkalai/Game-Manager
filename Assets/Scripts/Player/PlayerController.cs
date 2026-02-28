@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI coins;
-
+	[SerializeField] public EnemySpawner reset;
     public int coinCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +46,12 @@ public class PlayerController : MonoBehaviour
 			coinCount += 30;
 			coins.text = coinCount.ToString();
 			triggerObject.gameObject.SetActive(false);
+		}
+
+		if (collision.tag == "Tavern")
+		{
+			//reset enemy health
+			reset.ResetAllEnemyHealth();
 		}
 	}
 }

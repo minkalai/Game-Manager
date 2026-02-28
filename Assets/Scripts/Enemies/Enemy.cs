@@ -6,6 +6,7 @@ public abstract class Enemy : MonoBehaviour
 {
 	public int enemyID;
 	[Header("Combat Params")]
+	public int maxHP;
 	public int HP;
 	public int ATK;
 	public int DEF;
@@ -93,5 +94,8 @@ public abstract class Enemy : MonoBehaviour
 		attackCoroutine = null;
 	}
 
-
+	public void ResetHealth()
+	{
+		HP = maxHP;
+	}
 }
