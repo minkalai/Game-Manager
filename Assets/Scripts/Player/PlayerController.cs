@@ -22,16 +22,30 @@ public class PlayerController : MonoBehaviour
         
     }
 
-	private void OnTriggerEnter(Collider other)
-	{
-		//GameObject triggerObject = other.gameObject;
-        //Tilemap object = other.GetComponent<Tilemap>();
+	//private void OnTriggerEnter(Collider other)
+	//{
+	//	GameObject triggerObject = other.gameObject;
+ //       //Tilemap object = other.GetComponent<Tilemap>();
 
-		if (other.tag == "Treasure")//triggerObject.tag == "Treasure")
+	//	if (other.tag == "Treasure")
+ //       {
+ //           Debug.Log("Treasure Hit");
+ //           coinCount++;
+ //           triggerObject.gameObject.SetActive(false);
+ //           //other.gameObject.SetActive(false); 
+	//	}
+	//}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        GameObject triggerObject = collision.gameObject;
+
+		if(collision.tag == "Treasure")
         {
-            coinCount++;
-            //triggerObject.gameObject.SetActive(false);
-            other.gameObject.SetActive(false); 
+			Debug.Log("Treasure Hit");
+			coinCount += 30;
+			coins.text = coinCount.ToString();
+			triggerObject.gameObject.SetActive(false);
 		}
 	}
 }
